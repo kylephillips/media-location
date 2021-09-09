@@ -1,0 +1,92 @@
+//
+// General Settings
+// --------------------------------------------------
+.media-location-settings {
+	background-color: $white;
+	width: 100%;
+	border: $border;
+	margin-top: 1em;
+	.row {
+		display: flex;
+		&.align-center {
+			align-items: center;
+		}
+		&:first-child {
+			.title, .field {
+				border-top: 0;
+			}
+		}
+		&.title-row {
+			display: block;
+			.title {
+				width: 100%;
+				padding: 0;
+				.inner {
+
+				}
+			}
+		}
+	}
+	&.section-head {
+		background: transparent;
+		border: 0;
+		margin-top: 3em;
+		h3 {
+			margin: 0;
+		}
+	}
+	.title {
+		width: 30%;
+		background-color: #f9f9f9;
+		border-top: $border;
+		padding: 1em;
+		vertical-align: middle;
+		&.top-aligned {
+			vertical-align: top;
+		}
+		h4 {
+			margin: 0;
+			padding: 0;
+		}
+		p {
+			margin: 0;
+			font-size: .9em;
+		}
+	}
+	.field {
+		width: 70%;
+		border-top: $border;
+		border-left: $border;
+		padding: 1em;
+		vertical-align: middle;
+		h6 {
+			font-size: 1em;
+			margin: 0 0 .3em 0;
+		}
+		&.wp-config-value {
+			p {
+				margin: 0 0 .3em 0;
+			}
+			.value {
+				border-top: 1px solid rgba($black, .1);
+				padding: 1em 0;
+				&.first {
+					border-top: 0;
+				}
+			}
+		}
+	}
+	input[type="text"],
+	input[type="password"],
+	textarea,
+	select {
+		width: 100%;
+	}
+	label.checkbox {
+		display: block;
+		margin-top: .5em;
+		&:first-child {
+			margin: 0;
+		}
+	}
+}

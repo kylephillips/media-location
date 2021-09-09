@@ -1,0 +1,15 @@
+//
+// Alerts/Notifications
+// --------------------------------------------------
+.media-location-alert {
+	background-color: $white;
+	margin: 2em 0;
+	padding: 1em;
+	box-shadow: 0px 0px 2px 0px rgba($black, .12);
+}
+.media-location-alert-error {
+	border-left: 4px solid $red;
+}
+.media-location-alert-success {
+	border-left: 4px solid $green;
+}

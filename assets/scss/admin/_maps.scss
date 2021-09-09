@@ -1,0 +1,18 @@
+//
+// Location field in attachment details
+// --------------------------------------------------
+.media-location-place-input {
+	position: relative;
+	z-index: 999;
+}
+.pac-container {
+	z-index: 999999;
+}
+.media-location-edit-map {
+	position: relative;
+	z-index: 1;
+	height: 200px;
+	width: 100%;
+	background-color: $white;
+	margin-bottom: 2em;
+}
