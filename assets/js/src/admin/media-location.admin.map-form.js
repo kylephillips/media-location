@@ -21,8 +21,25 @@ MediaLocationAdmin.MapForm = function()
 
 	self.bindEvents = function()
 	{
-		wp.media.frame.on('all', function(e) { console.log(e); });
-		if ( typeof window.wp.media !== 'undefined' ){
+		if ( wp.media ){
+			
+			wp.media.view.Modal.prototype.on('open', function(data) {
+				setTimeout(function(){
+					self.getAttachmentData();
+					self.enableAutocomplete();
+				}, 200);
+			});
+			$(document).on('click', '.media-modal-content .attachments .attachment', function(){
+				setTimeout(function(){
+					self.post.latitude = null;
+					self.place = null;
+					self.getAttachmentData();
+					self.enableAutocomplete();
+				}, 300);
+			});
+		}
+		
+		if ( typeof window.wp.media !== 'undefined' && typeof window.wp.media.frame !== 'undefined' ){
 			window.wp.media.frame.on('edit:attachment', function(){
 				self.getAttachmentData();
 				self.enableAutocomplete();
