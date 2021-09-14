@@ -36,8 +36,9 @@ MediaLocationAdmin.MapForm = function()
 			});
 		}
 		// Temporary workaround for navigating media panel (ideally hook into event)
-		$(document).on('click', '.edit-attachment-frame .edit-media-header .left, .edit-attachment-frame .edit-media-header .right', function(){
+		$(document).on('click', '.edit-attachment-frame .edit-media-header', function(){
 			setTimeout(function(){
+				console.log('getting info');
 				self.initiateMedia();
 			}, 300);
 		});
