@@ -25,10 +25,24 @@ class Fields
 		$latitude = get_post_meta($post->ID, 'media_location_latitude', true);
 		$longitude = get_post_meta($post->ID, 'media_location_longitude', true);
 		$formatted_address = get_post_meta($post->ID, 'media_location_formatted_address', true);
+		$date = get_post_meta($post->ID, 'media_location_date', true);
 
 		if ( !$post ) return $form_fields;
+
+		// Date Field
 		ob_start();
-		include(\MediaLocation\Helpers::view('form-elements'));
+		include(\MediaLocation\Helpers::view('date-field'));
+		$html = ob_get_contents();
+		ob_end_clean();
+		$form_fields['media-location-date'] = [
+			'label' => __('Date', "media-location"), 
+			'input' => 'html', 
+			'html' => $html
+		];
+
+		// Location Field
+		ob_start();
+		include(\MediaLocation\Helpers::view('location-field'));
 		$html = ob_get_contents();
 		ob_end_clean();
 		$form_fields['media-location'] = [
@@ -36,6 +50,7 @@ class Fields
 			'input' => 'html', 
 			'html' => $html
 		];
+
 		return $form_fields;
 	}
 }

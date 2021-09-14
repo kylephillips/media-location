@@ -20,7 +20,7 @@ class Dependencies extends DependencyBase
 		wp_enqueue_script(
 			'media-location-scripts',
 			$this->plugin_dir . '/assets/js/admin-scripts.min.js',
-			['jquery'],
+			['jquery', 'jquery-ui-datepicker'],
 			MEDIALOCATION_VERSION,
 			true
 		);
