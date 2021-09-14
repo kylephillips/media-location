@@ -35,13 +35,12 @@ MediaLocationAdmin.MapForm = function()
 				}, 300);
 			});
 		}
-		
-		if ( typeof window.wp.media !== 'undefined' && typeof window.wp.media.frame !== 'undefined' ){
-			window.wp.media.frame.on('edit:attachment', function(){
-				self.getAttachmentData();
-				self.enableAutocomplete();
-			});
-		}
+		// Temporary workaround for navigating media panel (ideally hook into event)
+		$(document).on('click', '.edit-attachment-frame .edit-media-header .left, .edit-attachment-frame .edit-media-header .right', function(){
+			setTimeout(function(){
+				self.initiateMedia();
+			}, 300);
+		});
 		$(document).on('click', '[' + self.selectors.saveButton + ']', function(e){
 			e.preventDefault();
 			self.updateLocation();
@@ -65,8 +64,6 @@ MediaLocationAdmin.MapForm = function()
 
 	self.initiateMedia = function()
 	{
-		self.post.latitude = null;
-		self.place = null;
 		self.getAttachmentData();
 		self.enableAutocomplete();
 		self.enableDatePicker();

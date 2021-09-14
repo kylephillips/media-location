@@ -2,7 +2,7 @@
 <div class="media-location-place-input">
 	<input type="search" data-media-location-place-input placeholder="<?php _e('Enter a Location', 'media-location'); ?>" value="<?php echo $value; ?>" />
 </div>
-
+<input type="hidden" data-media-location-media-id value="<?php echo $post->ID; ?>">
 <input type="hidden" data-media-location-has_place value="<?php echo $place_id; ?>">
 <input type="hidden" data-media-location-place_id value="<?php echo $place_id; ?>">
 <input type="hidden" data-media-location-place_name value="<?php echo $place_name; ?>">
